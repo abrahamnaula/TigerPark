@@ -10,7 +10,7 @@ import axios from "axios";
 
 
 const Login = () => {
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [userContext, setUserContext] = useContext<any>(UserContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -35,7 +35,7 @@ const Login = () => {
                                     username,
                                     password
                                 }).then(() => {
-                                    setUserContext(prevState => ({
+                                    setUserContext((prevState: any) => ({
                                         ...prevState,
                                         username,
                                     }));

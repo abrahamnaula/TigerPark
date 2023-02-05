@@ -18,7 +18,7 @@ const PARK_N_RIDE = 'parknride'
 
 /*rsc shortcut*/
 const Parking = () => {
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [userContext, setUserContext] = useContext<any>(UserContext)
     const [parkingType, setParkingType] = useState(COMMUTER)
     const [lotId, setLotId] = useState<number | null>(null)
     const [data, setData] = useState<LotType[]>()

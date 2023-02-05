@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from '../App'
 
 const Home = () => {
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [userContext, setUserContext] = useContext<any>(UserContext)
 
     useEffect(() => {
         if (!userContext.username) {
@@ -25,7 +25,7 @@ const Home = () => {
                 {Object.keys(userContext).length > 0 && <div className="time-fields">
                     <div className="start-field">
                         <input placeholder="Start" onChange={(event) => {
-                            setUserContext(prevState => ({
+                            setUserContext((prevState:any) => ({
                                 ...prevState,
                                 "startTime": event.target.value
                             }));
@@ -34,7 +34,7 @@ const Home = () => {
                     </div>
                     <div className="end-field">
                         <input placeholder="End" onChange={(event) => {
-                            setUserContext(prevState => ({
+                            setUserContext((prevState: any) => ({
                                 ...prevState,
                                 "endTime": event.target.value
                             }));
