@@ -55,8 +55,13 @@
     left: 0;
     width: 100%;
 }
+.hero-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
 
-.hero-container .find-spot{
+.hero-container .button{
     display: flex;
     justify-content: center;
     gap: 1em;

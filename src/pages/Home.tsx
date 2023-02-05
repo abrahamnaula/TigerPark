@@ -5,8 +5,10 @@ import '../styles/Home.css'
 import ClockIcon from "../assets/ClockIcon";
 import SearchIcon from "../assets/SearchIcon";
 import { Link } from "react-router-dom";
+import {useCookies} from "react-cookie";
 
 const Home = () => {
+
     return (
         <section className="home">
             <Header />
@@ -22,7 +24,10 @@ const Home = () => {
                         <ClockIcon />
                     </div>
                 </div>
-                <Link to='/parking' className="find-spot">Find Spot <SearchIcon/></Link>
+                <div className="buttons">
+                    <Link to='/parking' className="button">Find Spot <SearchIcon/></Link>
+                    <Link to='/login'  className='button'>Logout</Link>
+                </div>
             </div>
             <img src={Background} alt="bg"/>
         </section>

@@ -8,6 +8,7 @@ import parkNRideData from "../data/ParkNRideData";
 import ParkingSpots from "../components/ParkingSpots";
 import {LotType} from "../data/LotType";
 import axios from 'axios'
+import Header from "../components/Header";
 
 
 const COMMUTER = 'commuter'
@@ -48,8 +49,6 @@ const Parking = () => {
         const res = await axios.get('http://198.21.156.104:3000/lots/all')
         setData(res.data)
     }
-
-
 
     useEffect(() => {
         fetchData()

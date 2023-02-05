@@ -83,7 +83,54 @@ const list: LotMarker[] = [
         lat:34.68114879459782,
         lon:-82.84651611068412,
     },
-    /*34.67995863112436, -82.8444307093638*/
+    {
+        LotName:"C-09",
+        Location:"(Centennial Blvd) Lot",
+        lat:34.680570908494474,
+        lon:-82.84491214971628,
+    },
+    {
+        LotName:"C-2A",
+        Location:"Upper Intramural Fields",
+        lat:34.68237889580935,
+        lon:-82.84374770000001,
+    },
+    {
+        LotName:"P-05",
+        Location:"Service Road",
+        lat:34.67727347099683,
+        lon:-82.81564145464765,
+    },
+    {
+        LotName:"P-7",
+        Location:"Perimiter Rd.",
+        lat:34.67891013438444,
+        lon:-82.81761019606728,
+    },
+    {
+        LotName:"P-06",
+        Location:"(Snow Lot)",
+        lat:34.683542025345425,
+        lon:-82.85949557204061,
+    },
+    {
+        LotName:"P-09",
+        Location:"(Soccer Complex)",
+        lat:34.68057859736555,
+        lon:-82.85052641921985,
+    },
+    {
+        LotName:"P-07",
+        Location:"(McFadden Lot)",
+        lat:34.68070366681457,
+        lon:-82.84867856651258,
+    },
+    {
+        LotName:"E-31",
+        Location:"(Tennis Center)",
+        lat:34.682437666215215,
+        lon:-82.84048742056808,
+    },
 ];
 const icon: L.DivIcon = L.divIcon({
     className: "parking-icon",
