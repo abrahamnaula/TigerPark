@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/Parking.css'
 import LeafMap from "../components/LeafMap";
 import Lot, {LotProp} from "../components/Lot";
@@ -7,21 +7,19 @@ import employeeData from "../data/EmployeeData";
 import parkNRideData from "../data/ParkNRideData";
 import ParkingSpots from "../components/ParkingSpots";
 import {LotType} from "../data/LotType";
+import axios from 'axios'
+
 
 const COMMUTER = 'commuter'
 const EMPLOYEE = 'employee'
 const PARK_N_RIDE = 'parknride'
 
-const parkingData: any = {
-    'commuter': commuterData,
-    'employee': employeeData,
-    'parknride': parkNRideData
-}
 
 /*rsc shortcut*/
 const Parking = () => {
     const [parkingType, setParkingType] = useState(COMMUTER)
     const [lotId, setLotId] = useState<number | null>(null)
+    const [data, setData] = useState<LotType[]>()
 
     const handleLots = (parkingType: string) => {
         return (
@@ -39,6 +37,29 @@ const Parking = () => {
             </div>
         )
     }
+
+    const parkingData: any = {
+        'commuter': data? data.filter(lot => lot.name.startsWith('C')): commuterData,
+        'employee': data? data.filter(lot => lot.name.startsWith('E')): employeeData,
+        'parknride': data? data.filter(lot => lot.name.startsWith('P')): parkNRideData
+    }
+
+    async function fetchData() {
+        const res = await axios.get('http://198.21.156.104:3000/lots/all')
+        setData(res.data)
+    }
+
+    async function postData() {
+        await axios.post('http://198.21.156.104:3000/lot/reserve', {
+            name: 'C-01',
+            spot: 1
+        })
+    }
+
+    useEffect(() => {
+        fetchData()
+        postData()
+    }, [])
 
     return (
         <section className="parking">
