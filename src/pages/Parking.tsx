@@ -49,16 +49,10 @@ const Parking = () => {
         setData(res.data)
     }
 
-    async function postData() {
-        await axios.post('http://198.21.156.104:3000/lot/reserve', {
-            name: 'C-01',
-            spot: 1
-        })
-    }
+
 
     useEffect(() => {
         fetchData()
-        postData()
     }, [])
 
     return (
@@ -81,7 +75,7 @@ const Parking = () => {
                 <hr/>
                 {
                     lotId?
-                        <ParkingSpots name={parkingData[parkingType][lotId-1].name} spots={parkingData[parkingType][lotId-1].spots} />:
+                        <ParkingSpots fetchData={fetchData} name={parkingData[parkingType][lotId-1].name} spots={parkingData[parkingType][lotId-1].spots} />:
                         handleLots(parkingType)
                 }
                 {
