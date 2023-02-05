@@ -1,0 +1,12 @@
+.parking-spots {
+    overflow-x: auto;
+}
+
+.parking-spot {
+    background-color: green;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: rgb(0, 0, 0, .25) solid .05em;
+}
