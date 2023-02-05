@@ -5,7 +5,6 @@ import '../styles/Home.css'
 import ClockIcon from "../assets/ClockIcon";
 import SearchIcon from "../assets/SearchIcon";
 import { Link } from "react-router-dom";
-import {useCookies} from "react-cookie";
 
 const Home = () => {
 

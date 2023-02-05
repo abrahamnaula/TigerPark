@@ -1,4 +1,3 @@
-import { LotProp } from "../components/Lot";
 import {getSpots, LotType} from "./LotType";
 
 const employeeData: LotType[] = [

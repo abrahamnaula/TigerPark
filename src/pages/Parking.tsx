@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import '../styles/Parking.css'
 import LeafMap from "../components/LeafMap";
-import Lot, {LotProp} from "../components/Lot";
+import Lot from "../components/Lot";
 import commuterData from "../data/CommuterData";
 import employeeData from "../data/EmployeeData";
 import parkNRideData from "../data/ParkNRideData";
 import ParkingSpots from "../components/ParkingSpots";
 import {LotType} from "../data/LotType";
 import axios from 'axios'
-import Header from "../components/Header";
 
 
 const COMMUTER = 'commuter'
