@@ -5,8 +5,6 @@ import {Spot} from "../data/LotType";
 import axios from "axios";
 
 
-
-
 interface ParkingSpotsProp {
     name: string
     spots: Spot[]

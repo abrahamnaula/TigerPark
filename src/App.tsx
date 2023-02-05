@@ -7,6 +7,8 @@ import {
     Route,
 } from "react-router-dom";
 import Login from "./pages/Login";
+// import { } from 'react-cookie';
+
 
 function App() {
 
@@ -19,7 +21,6 @@ function App() {
                 <Route path='/parking' element={<Parking />} />
             </Routes>
         </Router>
-
     </div>
   )
 }
