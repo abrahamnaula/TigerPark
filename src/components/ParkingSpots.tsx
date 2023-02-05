@@ -13,11 +13,11 @@ interface ParkingSpotsProp {
 }
 
 const ParkingSpots = ({ name, spots, fetchData } : ParkingSpotsProp) => {
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [userContext, setUserContext] = useContext<any>(UserContext)
 
     async function reserveSpot(name: string, spot: number) {
         if (!userContext.reserved) {
-            setUserContext(prevState => ({
+            setUserContext((prevState: any) => ({
                 ...prevState,
                 "reserved": {name, spot}
             }));
