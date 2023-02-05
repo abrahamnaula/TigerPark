@@ -7,6 +7,7 @@ import employeeData from "../data/EmployeeData";
 import parkNRideData from "../data/ParkNRideData";
 import ParkingSpots from "../components/ParkingSpots";
 import {LotType} from "../data/LotType";
+import { domain } from "../App";
 import axios from 'axios'
 
 
@@ -45,7 +46,7 @@ const Parking = () => {
     }
 
     async function fetchData() {
-        const res = await axios.get('http://198.21.156.104:3000/lots/all')
+        const res = await axios.get(`${domain}/lots/all`)
         setData(res.data)
     }
 

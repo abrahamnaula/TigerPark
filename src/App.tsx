@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Login from "./pages/Login";
 
+export const domain = 'http://198.21.156.104:3000'
 
 function App() {
 

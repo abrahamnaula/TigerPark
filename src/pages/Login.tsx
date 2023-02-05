@@ -5,6 +5,7 @@ import '../styles/Home.css'
 import '../styles/Login.css'
 import {useCookies} from "react-cookie";
 import {Link} from "react-router-dom";
+import { domain } from "../App";
 import axios from "axios";
 
 
@@ -31,7 +32,7 @@ const Login = () => {
                     <div style={{display:"flex", justifyContent: "center"}}>
                         <Link to='/'>
                             <button onClick={() => {
-                                axios.post('http://198.21.156.104:3000/auth', {
+                                axios.post(`${domain}/auth`, {
                                     username,
                                     password
                                 }).then(() => {

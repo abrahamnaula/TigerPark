@@ -3,7 +3,7 @@ import {Grid} from "@mui/material";
 import '../styles/ParkingSpots.css'
 import {Spot} from "../data/LotType";
 import axios from "axios";
-
+import { domain } from "../App";
 
 interface ParkingSpotsProp {
     name: string
@@ -13,7 +13,7 @@ interface ParkingSpotsProp {
 
 const ParkingSpots = ({ name, spots, fetchData } : ParkingSpotsProp) => {
     async function reserveSpot(name: string, spot: number) {
-        await axios.post('http://198.21.156.104:3000/lots/reserve', {
+        await axios.post(`${domain}/lots/reserve`, {
             name: name,
             spot: spot
         })
