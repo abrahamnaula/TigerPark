@@ -27,7 +27,7 @@ const ParkingSpots = ({ name, spots, fetchData } : ParkingSpotsProp) => {
                     <Grid item xs={1}>
                         <div
                             className="parking-spot"
-                            style={{background: spot.isAvailable ? 'green': 'red'}}
+                            style={{background: spot.isAvailable ? '#87e897': '#e89987'}}
                             onClick={() => reserveSpot(name, spot.id)}>
                             spot {spot.id} </div>
                     </Grid>
