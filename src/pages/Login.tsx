@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Header from "../components/Header";
 import Background from "../assets/clemson-bck.png";
 import '../styles/Home.css'
 import '../styles/Login.css'
 import {useCookies} from "react-cookie";
 import {Link} from "react-router-dom";
-import { domain } from "../App";
+import { domain, UserContext } from "../App";
 import axios from "axios";
 
 
 const Login = () => {
-    const [userCookies, setUserCookies, removeUserCookies] = useCookies(['username']);
-    const [passwordCookies, setPasswordCookies, removePasswordCookies] = useCookies(['password']);
+    const [userContext, setUserContext] = useContext(UserContext)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -36,8 +35,10 @@ const Login = () => {
                                     username,
                                     password
                                 }).then(() => {
-                                    setUserCookies('username', username, {path: '/'})
-                                    setPasswordCookies('password', password, {path: '/'})
+                                    setUserContext(prevState => ({
+                                        ...prevState,
+                                        username,
+                                    }));
                                 })
                             }} className="submitButton">Login</button>
                         </Link>

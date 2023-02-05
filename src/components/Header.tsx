@@ -11,11 +11,12 @@ const Header = () => {
                 <Link to='/'>
                     <img src={CarIcon}/>
                 </Link>
-                <h5>About</h5>
             </div>
 
             <div className="right-header">
-                <img src={ProfileIcon}></img>
+                <Link to='/login'>
+                    <img src={ProfileIcon}></img>
+                </Link>
             </div>
         </header>
     );

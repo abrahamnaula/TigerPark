@@ -5,7 +5,6 @@ import './index.css'
 import "leaflet/dist/leaflet.css";
 import { CookiesProvider } from 'react-cookie';
 
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
       <CookiesProvider>

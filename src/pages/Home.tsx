@@ -1,32 +1,51 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Header from "../components/Header";
 import Background from "../assets/clemson-bck.png";
 import '../styles/Home.css'
 import ClockIcon from "../assets/ClockIcon";
 import SearchIcon from "../assets/SearchIcon";
 import { Link } from "react-router-dom";
+import { UserContext } from '../App'
 
 const Home = () => {
+    const [userContext, setUserContext] = useContext(UserContext)
+
+    useEffect(() => {
+        if (!userContext.username) {
+
+        }
+    }, [userContext])
 
     return (
         <section className="home">
             <Header />
             <div className="hero-container">
                 <h1>TigerPark</h1>
-                <div className="time-fields">
+                {Object.keys(userContext).length == 0 && <Link to='login' className="button">Login</Link>}
+                {Object.keys(userContext).length > 0 && <div className="time-fields">
                     <div className="start-field">
-                        <input placeholder="Start" />
+                        <input placeholder="Start" onChange={(event) => {
+                            setUserContext(prevState => ({
+                                ...prevState,
+                                "startTime": event.target.value
+                            }));
+                        }}/>
                         <ClockIcon />
                     </div>
                     <div className="end-field">
-                        <input placeholder="End" />
+                        <input placeholder="End" onChange={(event) => {
+                            setUserContext(prevState => ({
+                                ...prevState,
+                                "endTime": event.target.value
+                            }));
+                        }}/>
                         <ClockIcon />
                     </div>
-                </div>
-                <div className="buttons">
+                </div>}
+                {Object.keys(userContext).length > 0 && <div className="buttons">
                     <Link to='/parking' className="button">Find Spot <SearchIcon/></Link>
-                    <Link to='/login'  className='button'>Logout</Link>
-                </div>
+                    <button className='button' onClick={() => setUserContext({})}>Logout</button>
+                </div>}
             </div>
             <img src={Background} alt="bg"/>
         </section>

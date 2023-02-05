@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import '../styles/Parking.css'
 import LeafMap from "../components/LeafMap";
 import Lot from "../components/Lot";
@@ -7,7 +7,7 @@ import employeeData from "../data/EmployeeData";
 import parkNRideData from "../data/ParkNRideData";
 import ParkingSpots from "../components/ParkingSpots";
 import {LotType} from "../data/LotType";
-import { domain } from "../App";
+import { domain, UserContext } from "../App";
 import axios from 'axios'
 
 
@@ -18,6 +18,7 @@ const PARK_N_RIDE = 'parknride'
 
 /*rsc shortcut*/
 const Parking = () => {
+    const [userContext, setUserContext] = useContext(UserContext)
     const [parkingType, setParkingType] = useState(COMMUTER)
     const [lotId, setLotId] = useState<number | null>(null)
     const [data, setData] = useState<LotType[]>()
@@ -46,7 +47,7 @@ const Parking = () => {
     }
 
     async function fetchData() {
-        const res = await axios.get(`${domain}/lots/all`)
+        const res = await axios.get(`${domain}/lots/available`, { params: { startTime: userContext.startTime, endTime: userContext.endTime}})
         setData(res.data)
     }
 
