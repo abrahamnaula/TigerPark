@@ -131,6 +131,12 @@ const list: LotMarker[] = [
         lat:34.682437666215215,
         lon:-82.84048742056808,
     },
+    {
+        LotName:"P-01 Extension",
+        Location:"(Track)",
+        lat:34.67317801454971,
+        lon:-82.85012604886973,
+    },
 ];
 const icon: L.DivIcon = L.divIcon({
     className: "parking-icon",

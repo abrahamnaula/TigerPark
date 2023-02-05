@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Header from "../components/Header";
 import Background from "../assets/clemson-bck.png";
 import '../styles/Home.css'
