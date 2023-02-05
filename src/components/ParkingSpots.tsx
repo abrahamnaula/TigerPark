@@ -14,8 +14,7 @@ interface ParkingSpotsProp {
 const ParkingSpots = ({ name, spots } : ParkingSpotsProp) => {
     return (
         <div className='parking-spots'>
-            <h4>back to lots</h4>
-            <h3>C-1</h3>
+            <h3>{name}</h3>
             <Grid container columns={10} >
                 {spots.map((spot) =>
                     <Grid item xs={1}>

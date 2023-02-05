@@ -7,7 +7,7 @@ const parkNRideData: LotType[] = [
         address: '6661 dog street',
         open: 100,
         capacity: 500,
-        spots: getSpots()
+        spots: getSpots(100)
     },
 ]
 

@@ -8,9 +8,9 @@ export interface LotProp extends HTMLAttributes<HTMLDivElement>{
     lot: LotType
 }
 
-const Lot = ( { lot }: LotProp) => {
+const Lot = ( { lot, ...props }: LotProp) => {
     return (
-        <div className="lot-container">
+        <div className="lot-container" {...props}>
             <h3>{ lot.name }</h3>
             <p>{ lot.address }</p>
             <h5>{ lot.open } / { lot.capacity } available</h5>

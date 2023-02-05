@@ -1,6 +1,6 @@
-export const getSpots = () => {
+export const getSpots = (amount: number) => {
     const spots: Spot[] = [];
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < amount; i++) {
         spots.push({
             id: i,
             isAvailable: true
